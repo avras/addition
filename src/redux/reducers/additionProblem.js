@@ -33,9 +33,6 @@ const additionProblem = (state = initialState, action) => {
     }
     case ADDITION_PROBLEM_CHECK_ANSWER: {
       const { answer } = action;
-      console.log(answer);
-      console.log(answer === state.firstNum + state.secondNum);
-      console.log(parseInt(answer) === state.firstNum + state.secondNum);
       
       if (parseInt(answer) === state.firstNum + state.secondNum) {
         return {
