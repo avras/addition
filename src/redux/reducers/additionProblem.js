@@ -9,6 +9,7 @@ const initialState = {
   answerResponse: '',
   showAnswerResponse: false,
   showNewExerciseButton: false,
+  problemSolved: false,
 };
 
 const minNum = 100;
@@ -40,6 +41,7 @@ const additionProblem = (state = initialState, action) => {
           answerResponse: 'Yay! ' + answer + ' is the correct answer.',
           showAnswerResponse: true,
           showNewExerciseButton: true,
+          problemSolved: true,
         }
       }
       else {

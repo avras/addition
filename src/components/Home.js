@@ -59,6 +59,10 @@ const Home = ({ additionProblem, additionProblemInitialize, additionProblemCheck
     }
   }
 
+  const disableCheckAnswerButton = () => {
+    return (answer.length === 0) || !ansValid(answer) || additionProblem.problemSolved;
+  }
+
   const showNewExerciseButton = () => {
     if (additionProblem.showNewExerciseButton) {
       return (
@@ -118,6 +122,7 @@ const Home = ({ additionProblem, additionProblemInitialize, additionProblemCheck
         onChange={handleAnswerChange}
         error={!ansValid(answer)}
         helperText={ansValid(answer) ? null : 'Please enter an integer'}
+        disabled={additionProblem.problemSolved}
         />
       <Button
         type='submit'
@@ -125,7 +130,7 @@ const Home = ({ additionProblem, additionProblemInitialize, additionProblemCheck
         variant='contained'
         color='primary'
         className={classes.submit}
-        disabled = {answer.length === 0 || !ansValid(answer)}
+        disabled = {disableCheckAnswerButton()}
         >
           Check Answer
       </Button>
