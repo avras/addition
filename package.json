@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp docs/_config.yml . && rm -rf docs && mv build docs && mv _config.yml docs/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
